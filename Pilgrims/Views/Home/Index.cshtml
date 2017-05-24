@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    
+</head>
+<body>
+    <p><h2>Hegemonys database "mission Hyperion"</h2> <h4 style="background-color:red;color:white">TOP SECRET!!!</h4></p><hr />
+    <div style="background-color:gray">
+        <p><h3><input type="button" id="ollList" value="<< >>" /> : The whole list of pilgrims.</h3></p>
+        <p><h3><input type="button" id="add" value="<< >>" /> : Add a new member.</h3></p><hr />
+        <p><h3>@Html.TextBox("idHuman", "", new { placeholder = "Enter the ID" }) - @Html.TextBox("info", "", new { placeholder = "Error info!" })</h3></p>
+        <p><h3><input type="button" id="search" value="<< >>" /> : Search by ID.</h3></p>
+        <p><h3><input type="button" id="correct" value="<< >>" /> : Correct the data.</h3></p>
+        <p><h3 style="color:red"><input type="button" id="delete" value="<< >>" /> : DELETE!</h3></p><hr />
+    </div>
+    <div id="res"></div>
+
+
+    <script src="~/Scripts/JavaScript.js"></script>
+</body>
+</html>

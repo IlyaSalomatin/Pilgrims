@@ -1,0 +1,15 @@
+﻿@using Pilgrims.Models
+@model List<Human>
+
+
+@foreach (var i in Model)
+{
+    <ul>
+        <li>ID : @i.ID</li>
+        <li>Name : @i.Name</li>
+        <li>SecondName : @i.SecondName</li>
+        <li>Birthday : @i.Birthday</li>
+        <li>Planet : @i.Planet</li>       
+    </ul>
+    <hr />
+}

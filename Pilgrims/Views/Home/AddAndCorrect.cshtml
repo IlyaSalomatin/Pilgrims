@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+@model Pilgrims.Models.Human
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddAndCorrect</title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <p><h2>Fill in all the fields!</h2></p><hr />
+    <div>
+        @using (Html.BeginForm(new { id = "FormOne" }))
+        {
+            <p><h3>ID : @Html.TextBoxFor(m => m.ID)</h3></p>
+            <p><h3>Name : @Html.TextBoxFor(m => m.Name)</h3></p>
+            <p><h3>SecondName : @Html.TextBoxFor(m => m.SecondName)</h3></p>
+            <p><h3>Birthday : @Html.TextBoxFor(m => m.Birthday)</h3></p>
+            <p><h3>Planet : @Html.TextBoxFor(m => m.Planet)</h3></p><hr />
+            <p><h3><input type="button" id="update" value="Update" /> | <input type="button" id="back" value="Back" /></h3></p>
+        }
+        <p><h3>Info Box : @Html.TextBox("infobox","")</h3></p>
+    </div>
+    <script src="~/Scripts/JavaScript.js"></script>
+</body>
+</html>
