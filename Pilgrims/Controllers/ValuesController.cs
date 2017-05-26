@@ -13,8 +13,7 @@ namespace Pilgrims.Controllers
     public class ValuesController : ApiController
     {
         public List<HumanT> Get()
-        {
-            
+        {           
             List<Human> hm = new List<Human>();
             hm = DataBase.Read();           
             List<HumanT> tm = new List<HumanT>();            
@@ -69,8 +68,7 @@ namespace Pilgrims.Controllers
                 if (i.ID==value.ID)
                 {
                     return ("Id is not available!");
-                }
-                
+                }                
             }
             hm.Add(value);
             DataBase.Write(hm);
@@ -93,7 +91,6 @@ namespace Pilgrims.Controllers
                     DataBase.Write(hm);
                     return ("Pilgrim is update.");
                 }
-
             }
             return ("SOME ERROR!!!");
         }
@@ -110,8 +107,7 @@ namespace Pilgrims.Controllers
                     hm.Remove(i);
                     DataBase.Write(hm);
                     return ("- is DELETED!!!");
-                }
-                
+                }                
             }
             return ("SOME ERROR!!!");
         }
