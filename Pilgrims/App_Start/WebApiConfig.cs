@@ -19,7 +19,7 @@ namespace Pilgrims
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-            config.Formatters.Remove(config.Formatters.JsonFormatter);
+           // config.Formatters.Remove(config.Formatters.JsonFormatter);
         }
     }
 }

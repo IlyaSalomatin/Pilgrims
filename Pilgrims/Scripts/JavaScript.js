@@ -1,12 +1,33 @@
 ﻿
+//var Human = {};
 
 $("#add").click(
     function () {        
         document.location.replace("/Home/AddAndCorrect");
-        $("#update").val("Add");
+        //$("#update").val("Add");
         //$("#res").load("/Home/AddAndCorrect");
     }
  );
+
+
+$("#correct").click(
+    function () {
+        document.location.replace("/Home/AddAndCorrect");
+        $.ajax({
+            url: "/api/values/" + $("#idHuman").val(),
+            type: "GET",
+            success: function (data) {
+                //document.location.replace("/Home/AddAndCorrect");
+                $("#ID").val(toString(data.ID));
+                $("#Name").val(toString(data.Name));
+                $("#SecondName").val(toString(data.SecondName));
+                $("#Birthday").val(toString(data.Birthday));
+                $("#Planet").val(toString(data.Planet));
+                }
+            });
+        });
+    
+ 
 
 $("#back").click(
     function () {
@@ -21,10 +42,10 @@ $("#ollList").click(function () {
         url: "/api/values",
         type: "GET",
         success: function (data) {
-            console.dir(data);
+            //console.dir(data);
             var res = "";
             for (var i = 0; i < data.length; i++) {
-                res += "ID - "+data[i].ID+"<br />"+ data[i].Name + " " + data[i].SecondName + "<br />"+data[i].Birthday+" - "+data[i].Planet+"<hr />";
+                res += data[i].Name + " " + data[i].SecondName + " [id-"+data[i].ID+"]<hr />";
             }
             $("#res").html(res);
         }
@@ -38,7 +59,7 @@ $("#ollList").click(function () {
 //);
 
 $("#search").click(function () {
-    console.log("gogo");
+   // console.log("gogo");
     $.ajax({
         url: "/api/values/" + $("#idHuman").val(),
         type: "GET",
@@ -99,7 +120,7 @@ $("#delete").click(function () {
 //    });
 //});
 
-$("#update").click(function () {
+$("#plus").click(function () {
     $.ajax({
         url: "/api/values/",
         type: "POST",
@@ -111,18 +132,24 @@ $("#update").click(function () {
             Planet: $("#Planet").val(),
         },
         success: function (data) {
-            $("#infobox").html(data);
+            $("#infobox").val(data);
         }
     });
 });
 
-$("#correct").click(function () {
+$("#update").click(function () {    
     $.ajax({
-        url: "/api/values/" + $("#idHuman").val(),
-        //data: { "": $("#idHuman").val()},
-        //type: "PUT",
-        //success: function (data) {
-        //    $("#result").html(data);
-        //}
+        url: "/api/values/",
+        type: "PUT",
+        data: {
+            ID: $("#ID").val(),
+            Name: $("#Name").val(),
+            SecondName: $("#SecondName").val(),
+            Birthday: $("#Birthday").val(),
+            Planet: $("#Planet").val(),
+        },
+        success: function (data) {
+            $("#infobox").val(data);
+        }
     });
 });

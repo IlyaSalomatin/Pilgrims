@@ -154,6 +154,7 @@
     </Compile>
     <Compile Include="Models\DataBase.cs" />
     <Compile Include="Models\Human.cs" />
+    <Compile Include="Models\HumanT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

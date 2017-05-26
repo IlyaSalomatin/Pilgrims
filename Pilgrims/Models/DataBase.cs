@@ -13,7 +13,7 @@ namespace Pilgrims.Models
         public static void Write(List<Human> h)
         {
             XmlSerializer xs = new XmlSerializer(typeof(List<Human>));
-            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(path, FileMode.Create))
             {
                 xs.Serialize(fs, h);
             }
