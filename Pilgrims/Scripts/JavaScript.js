@@ -10,22 +10,21 @@ $("#add").click(
  );
 
 
-$("#correct").click(
-    function () {
-        document.location.replace("/Home/AddAndCorrect");
-        $.ajax({
+$("#correct").click(function () {
+    $("#res").load("/Home/AddAndCorrect");
+    $.ajax({
             url: "/api/values/" + $("#idHuman").val(),
+            //url: "/api/values/two/",
             type: "GET",
             success: function (data) {
-                //document.location.replace("/Home/AddAndCorrect");
-                $("#ID").val(toString(data.ID));
-                $("#Name").val(toString(data.Name));
-                $("#SecondName").val(toString(data.SecondName));
-                $("#Birthday").val(toString(data.Birthday));
-                $("#Planet").val(toString(data.Planet));
-                }
-            });
+                $("#ID").val(data.ID);
+                $("#Name").val(data.Name);
+                $("#SecondName").val(data.SecondName);
+                $("#Birthday").val(data.Birthday);
+                $("#Planet").val(data.Planet);
+            }
         });
+});
     
  
 

@@ -12,6 +12,28 @@ namespace Pilgrims.Controllers
 {
     public class ValuesController : ApiController
     {
+        //[Route("api/values/two/")]
+        //public Human GetTwo(int id)
+        //{
+        //    //int id = 1;
+        //    List<Human> hm = new List<Human>();
+        //    Human pl = new Human();
+        //    hm = DataBase.Read();
+        //    foreach (var i in hm)
+        //    {
+        //        if (i.ID == id)
+        //        {
+        //            pl.ID = i.ID;
+        //            pl.Name = i.Name;
+        //            pl.SecondName = i.SecondName;
+        //            pl.Planet = i.Planet;
+        //            pl.Birthday = i.Birthday;
+        //            break;
+        //        }
+        //    }
+        //    return (pl);
+        //}
+        
         public List<HumanT> Get()
         {           
             List<Human> hm = new List<Human>();
@@ -111,5 +133,7 @@ namespace Pilgrims.Controllers
             }
             return ("SOME ERROR!!!");
         }
+        
+        
     }
 }

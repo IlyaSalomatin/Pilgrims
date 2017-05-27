@@ -9,7 +9,7 @@ namespace Pilgrims.Models
 {
     public static class DataBase
     {
-        public static string path = @"E:\программирование\works3\mvc1\work11\Pilgrims\Pilgrims\bin\Pilgrims.xml";
+        public static string path = @"E:\программирование\works3\mvc1\work11\Pilgrims\Pilgrims\bin\Pilgrims.xml";        
         public static void Write(List<Human> h)
         {
             XmlSerializer xs = new XmlSerializer(typeof(List<Human>));
