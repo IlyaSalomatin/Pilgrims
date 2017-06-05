@@ -19,12 +19,12 @@ namespace Pilgrims.Controllers
             return View();
         }
 
-        public ActionResult Resalt()
-        {
-            List<Human> hm = new List<Human>();
-            hm = DataBase.Read();
+        //public ActionResult Resalt()
+        //{
+        //    List<Human> hm = new List<Human>();
+        //    hm = DataBase.Read();
 
-            return PartialView(hm);
-        }
+        //    return PartialView(hm);
+        //}
     }
 }
